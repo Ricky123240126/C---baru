@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>halo dunia</h1>
+    <button id="tombol1">klik saya!</button>
+    <button id="tombol2">klik ini dong</button>
+    <script>
+        const body = document.body
+        const tombolsatu = document.getElementById('tombol1')
+        tombolsatu.ondblclick = ()=> {
+            body.append("tombol berhasil diklik")
+            tombolsatu.innerText = "clicked"
+            alert('anda mengklik tombol')
+        }
+        const tomboldua = document.getElementById('tombol2')
+        tomboldua.onclick = ()=> {
+            body.append('eh jadi deh')
+        }
+        tomboldua.onmouseout = () =>{
+            tomboldua.innerText("eh ga jadi")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Pasien *baru = new Pasien;

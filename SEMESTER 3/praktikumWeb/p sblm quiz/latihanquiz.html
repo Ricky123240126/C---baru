@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LATIHAN QUIZ</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <style>
+      h1 {
+        margin-left: 20px;
+      }
+      div.foto-kocheng img {
+        width: 350px;
+        height: auto;
+        float: left;
+        margin-left: 50px;
+        margin-right: 25px;
+      }
+      div.kocheng {
+        margin-right: 50px;
+        flex-grow: 1;
+        font-size: 13px;
+      }
+      div.kocheng ol {
+        color: purple;
+        margin-left: 440px;
+      }
+      .content-section {
+        display: none;
+      } /* default disembunyikan */
+      .active-section {
+        display: block;
+      } /* yang tampil */
+    </style>
+  </head>
+  <body style="background-color: bisque">
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-light" href="#">Komunitas Kucing</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active text-light"
+                aria-current="page"
+                href="#"
+                onclick="showSection('home', this)"
+              >
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-light"
+                href="#"
+                onclick="showSection('daftar', this)"
+                >Daftar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-light"
+                href="#"
+                onclick="showSection('desain', this)"
+                >Desain</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="home" class="content-section active-section">
+      <h1 style="font-family: Georgia, 'Times New Roman', Times, serif">
+        <i> Selamat Datang Di Komunitas Kucing </i>
+      </h1>
+      <br />
+      <div class="foto-kocheng">
+        <a href="https://www.google.com">
+          <img
+            src="data:image/jpeg;base64,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"
+            alt="ini foto kocheng"
+          />
+        </a>
+        <div class="kocheng">
+          <p style="color: red">
+            Kucing adala hewan mamamlia kecil yang dikenal dengan sifatnya yang
+            lincah, anggun, dan penuh rasa ingin tahu. tubuhnya lentur dengan
+            bulu lembut yang beragam warna saerta mata yang tajam yang mampu
+            melihat jelas di kondisi minim cahaya. Kucing termasuk hewan
+            karnivora, tetapi dapat beradaptasi hidup dengan manusia sebagai
+            hewan peliharaaan. Mereka memiliki kebiasaan mencakar untuk menandai
+            wilayah, merawat diri dengan menjilat tubuhnya, serta tidur dalam
+            waktu yang lama sekitar 12-16 jam perhari. kucing sering dianggap
+            membawa kenyamanan dan kasih sayang, sehingga menjadi salah satu
+            hewan peliharaan yang populer di dunia.
+          </p>
+          <p style="color: blue">
+            Kucing seperti anjing, termasuk hewan yang penyayang. Riset yang
+            dilakukan scientificamerica mengungkapkan, kucing mempelajari
+            sendiri cara mengeluatkan bunyi miaw unutk bisa menarik perhatian
+            manusia. Berikut macam-macam Kucing:
+          </p>
+          <p>
+            <b style="font-size: 15px"> Jenis-jenis kucing </b>
+          </p>
+          <ol>
+            <li>Kucing oyen</li>
+            <li>Kucing Akmal</li>
+            <li>Kucing Haheng</li>
+            <li>Kucing Hoh??</li>
+            <li>Dll.</li>
+          </ol>
+          <br />
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-4">
+      <div id="daftar" class="content-section">
+        <div class="container my-4">
+          <h3 class="text-center mb-4">Pendaftaran Komunitas Kucing</h3>
+          <form class="p-4 bg-white rounded shadow-sm">
+            <!-- Nama -->
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama Lengkap</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nama"
+                placeholder=""
+              />
+            </div>
+
+            <!-- Tanggal Lahir -->
+            <div class="mb-3">
+              <label for="tgl" class="form-label">Tanggal Lahir</label>
+              <input
+                type="date"
+                class="form-control"
+                id="tgl"
+                placeholder="dd/mm/yyyy"
+              />
+            </div>
+
+            <!-- Kelompok Umur -->
+            <div class="mb-3">
+              <label for="umur" class="form-label">Kelompok Umur</label>
+              <select class="form-select" id="umur">
+                <option selected>Pilih kelompok umur</option>
+                <option value="1">Anak-anak</option>
+                <option value="2">Remaja</option>
+                <option value="3">Dewasa</option>
+              </select>
+            </div>
+
+            <!-- Jenis Kelamin -->
+            <div class="mb-3">
+              <label class="form-label">Jenis Kelamin</label><br />
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="laki"
+                  value="laki"
+                />
+                <label class="form-check-label" for="laki">Laki-Laki</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="perempuan"
+                  value="perempuan"
+                />
+                <label class="form-check-label" for="perempuan"
+                  >Perempuan</label
+                >
+              </div>
+            </div>
+
+            <!-- Hobi -->
+            <div class="mb-3">
+              <label class="form-label">Hobi</label><br />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="game" />
+                <label class="form-check-label" for="game">Main Game</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="ngoding" />
+                <label class="form-check-label" for="ngoding">Ngoding</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="kucing" />
+                <label class="form-check-label" for="kucing"
+                  >Bermain dengan kucing</label
+                >
+              </div>
+            </div>
+
+            <!-- Asal Daerah -->
+            <div class="mb-3">
+              <label for="asal" class="form-label">Asal Daerah</label>
+              <input type="text" class="form-control" id="asal" />
+            </div>
+
+            <!-- Alasan -->
+            <div class="mb-3">
+              <label for="alasan" class="form-label"
+                >Alasan Ingin Bergabung</label
+              >
+              <textarea class="form-control" id="alasan" rows="2"></textarea>
+            </div>
+
+            <!-- Tombol Submit -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success">
+                KIRIM PENDAFTARAN
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+      ;
+    ></script>
+    <script>
+      function showSection(sectionId) {
+        // sembunyikan semua section
+        document.querySelectorAll(".content-section").forEach((div) => {
+          div.classList.remove("active-section");
+        });
+        // tampilkan yang dipilih
+        document.getElementById(sectionId).classList.add("active-section");
+      }
+    </script>
+  </body>
+</html>
